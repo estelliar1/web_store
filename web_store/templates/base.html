@@ -1,12 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href={% static "css/bootstrap.css" %}>
+    <title>
+      {% block title %}{% endblock %}
+    </title>
   </head>
   <body>
-    {% include "header.html" %}
+    {% include "includes/header.html" %}
     <main>
-      {% block content %} Контента пока нет {% endblock %}
+      <div class="container py-5">
+        {% block content %} Контента пока нет {% endblock %}
+      </div>
     </main>
-    {% include "footer.html" %}
+    {% include "includes/footer.html" %}
   </body>
 </html> 
